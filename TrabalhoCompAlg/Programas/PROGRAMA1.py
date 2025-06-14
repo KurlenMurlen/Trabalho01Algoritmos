@@ -1,4 +1,5 @@
 import itertools
+import os
 
 def gerar_combinacoes(n, p):
     """
@@ -20,12 +21,23 @@ def salvar_combinacoes(combinacoes, nome_arquivo):
     
     Args:
         combinacoes (list): Lista de combinações a serem salvas
-        nome_arquivo (str): Nome do arquivo de saída
+        nome_arquivo (str): Caminho completo do arquivo de saída
     """
     with open(nome_arquivo, 'w') as f:
         for comb in combinacoes:
             linha = ','.join(map(str, comb)) + '\n'
             f.write(linha)
+
+def criar_pasta_se_nao_existir(pasta):
+    """
+    Cria a pasta especificada se ela não existir.
+    
+    Args:
+        pasta (str): Caminho da pasta a ser criada
+    """
+    if not os.path.exists(pasta):
+        os.makedirs(pasta)
+        print(f"Pasta '{pasta}' criada com sucesso.")
 
 def main():
     # Configurações para Lotofácil
@@ -38,7 +50,13 @@ def main():
         'S11': 11
     }
     
+    # Cria a pasta dados dentro de TrabalhoCompAlg se não existir
+    pasta_base = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    pasta_dados = os.path.join(pasta_base, 'dados')
+    criar_pasta_se_nao_existir(pasta_dados)
+    
     print("Iniciando geração de combinações para Lotofácil...")
+    print(f"Os arquivos serão salvos na pasta '{pasta_dados}'")
     
     for nome, p in tamanhos.items():
         print(f"\nGerando {nome}...")
@@ -59,8 +77,8 @@ def main():
         else:
             print("Verificação: FALHA - Número de combinações incorreto")
         
-        # Salva em arquivo (comente esta linha para testes rápidos)
-        nome_arquivo = f"{nome}.txt"
+        # Salva em arquivo na pasta dados
+        nome_arquivo = os.path.join(pasta_dados, f"{nome}.txt")
         salvar_combinacoes(combinacoes, nome_arquivo)
         print(f"Combinações salvas em {nome_arquivo}")
     
