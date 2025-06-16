@@ -1,70 +1,71 @@
-# Trabalho01Algoritmos
-# Projeto de Complexidade de Algoritmos - Lotofácil
+# Trabalho 01 - Algoritmos de Cobertura para Lotofácil
 
-## Descrição do Projeto
-Este projeto visa analisar e implementar algoritmos para geração e manipulação de combinações numéricas relacionadas à Lotofácil, conforme os requisitos especificados no trabalho acadêmico. O objetivo principal é desenvolver soluções eficientes para gerar combinações e encontrar subconjuntos ótimos que cubram todas as sequências de tamanhos menores.
-
-## Integrantes do Grupo
-- Tarso Bertolini
-- Gabriel Simini
-- Eduardo Contin
-- Mariana de Castro
-- Alex Secco
+Este projeto contém programas em Python para geração de combinações, algoritmos de cobertura (heurística gulosa), análise de complexidade e cálculo de custo financeiro para apostas da Lotofácil.
 
 ## Estrutura do Projeto
-/projeto_lotofacil
-│
-├── README.md # Este arquivo
-├── programa1.py # Gerador de combinações (S11 a S15)
-├── programa2.py # Subconjunto SB15_14 (Cenário C1)
-├── programa3.py # Subconjunto SB15_13 (Cenário C2)
-├── programa4.py # Subconjunto SB15_12 (Cenário C3)
-├── programa5.py # Subconjunto SB15_11 (Cenário C4)
-├── analise_complexidade.md # Relatório de análise de complexidade
-├── custos_financeiros.md # Cálculo dos custos para cada subconjunto
-├── dados/ # Pasta para armazenar combinações geradas
-│ ├── S11.txt
-│ ├── S12.txt
-│ ├── S13.txt
-│ ├── S14.txt
-│ └── S15.txt
-└── resultados/ # Pasta para armazenar subconjuntos resultantes
-├── SB15_11.txt
-├── SB15_12.txt
-├── SB15_13.txt
-└── SB15_14.txt
+
+```
+Trabalho01Algoritmos/
+├── dados/                # Arquivos de entrada (combinações S11.txt, S12.txt, S13.txt, S14.txt, etc)
+├── resultados/           # Arquivos de saída gerados pelos programas (SB15_11.txt, SB15_12.txt, ...)
+├── Programas/            # Programas Python principais
+│   ├── programa2.py      # Cobertura para t=14
+│   ├── programa3.py      # Cobertura para t=13
+│   ├── programa4.py      # Cobertura para t=12
+│   ├── programa5.py      # Cobertura para t=11
+│   ├── analise_complexidade.py   # Análise visual e textual de complexidade (com gráfico interativo)
+│   └── custo_financeiro.py       # Cálculo do custo financeiro dos subconjuntos
+├── venv/                 # Ambiente virtual Python (opcional)
+└── README.md             # Este arquivo
+```
+
+## Como executar
+
+### 1. Crie e ative o ambiente virtual (opcional, recomendado)
+
+```sh
+python -m venv venv
+venv\Scripts\activate
+```
+
+### 2. Instale as dependências
+
+```sh
+pip install dash plotly pandas tabulate
+```
+
+### 3. Execute os programas de cobertura
+
+Cada programa cobre um valor de `t` e gera um arquivo na pasta `resultados`:
+
+```sh
+python Programas/programa2.py   # Gera SB15_14.txt
+python Programas/programa3.py   # Gera SB15_13.txt
+python Programas/programa4.py   # Gera SB15_12.txt
+python Programas/programa5.py   # Gera SB15_11.txt
+```
+
+### 4. Análise de complexidade (com gráfico interativo)
+
+```sh
+python Programas/analise_complexidade.py
+```
+Abra o navegador no endereço indicado (geralmente http://127.0.0.1:8050).
+
+### 5. Cálculo do custo financeiro
+
+```sh
+python Programas/custo_financeiro.py
+```
+Será exibida uma tabela com o custo total de cada subconjunto de apostas.
+
+## Observações
+
+- Os arquivos de entrada devem estar na pasta `dados` e os resultados serão salvos em `resultados`.
+- Os programas podem consumir muita memória e tempo, dependendo do tamanho dos arquivos de entrada.
+- O código está organizado para facilitar a leitura, análise e manutenção.
 
 ---
 
-## Requisitos
-- Python 3.8+
-- Bibliotecas Python (instaláveis via `pip install -r requirements.txt`):
-  - itertools (já incluído na biblioteca padrão)
-  - math (já incluído na biblioteca padrão)
-  - time (já incluído na biblioteca padrão)
-
-## Como Executar
-1. Clone o repositório ou baixe os arquivos do projeto
-2. Execute os programas em ordem:
-   ```bash
-   python programa1.py        # Gera todas as combinações base
-   python programa2.py        # Gera SB15_14
-   python programa3.py        # Gera SB15_13
-   python programa4.py        # Gera SB15_12
-   python programa5.py        # Gera SB15_11
-
-Observações Importantes
-O programa1.py pode consumir recursos significativos de memória e tempo para gerar todas as combinações
-
-Para testes iniciais, recomenda-se reduzir o valor de n no código-fonte
-
-### Os programas 2-5 podem implementar abordagens alternativas (heurísticas) caso a solução por força bruta seja inviável
-
-Prazos
-Turma A: Entrega até 16/06/2025
-
-Turma B: Entrega até 17/06/2025
-
-### Metodologia
-O projeto será desenvolvido utilizando PBL (Problem-Based Learning), com distribuição equitativa de tarefas entre os membros do grupo. Cada integrante será responsável por parte da implementação e deverá estar preparado para defender qualquer aspecto do projeto.
+Desenvolvido para
    
