@@ -61,11 +61,11 @@ Será exibida uma tabela com o custo total de cada subconjunto de apostas.
 
 ## Observações
 
-- Os arquivos de entrada devem estar na pasta `dados` e os resultados serão salvos em `resultados`.
+- RODAR OS PROGRAMAS EM ORDEM, ISSO VAI GARANTIR QUE AS PASTAS.
 - Os programas podem consumir muita memória e tempo, dependendo do tamanho dos arquivos de entrada.
 - O código está organizado para facilitar a leitura, análise e manutenção.
 
 ---
 
-Desenvolvido para
+
    
