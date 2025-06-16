@@ -1,1 +1,0 @@
-criei esse arquivo só pra pasta aparecer para todos no git e não termos problemas de compatibilidade
