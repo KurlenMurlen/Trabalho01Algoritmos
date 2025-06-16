@@ -61,7 +61,7 @@ Será exibida uma tabela com o custo total de cada subconjunto de apostas.
 
 ## Observações
 
-- RODAR OS PROGRAMAS EM ORDEM, ISSO VAI GARANTIR QUE AS PASTAS.
+- RODAR OS PROGRAMAS EM ORDEM, ISSO VAI GARANTIR QUE AS PASTAS ``resultados`` E ``dados`` SEJAM GERADAS CORRETAMENTE.
 - Os programas podem consumir muita memória e tempo, dependendo do tamanho dos arquivos de entrada.
 - O código está organizado para facilitar a leitura, análise e manutenção.
 
